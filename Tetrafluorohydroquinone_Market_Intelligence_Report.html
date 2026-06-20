@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tetrafluorohydroquinone (TFHQ) — Market Intelligence Report</title>
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --accent: #4fc3f7;
+    --blue: #1565c0;
+    --bg: #f0f2f5;
+    --card: #ffffff;
+    --green: #2e7d32;
+    --amber: #f57f17;
+    --red: #c62828;
+    --india-bg: #fff8e1;
+    --india-border: #f9a825;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: #222; display: flex; min-height: 100vh; }
+
+  /* SIDEBAR */
+  #sidebar {
+    width: 260px; min-width: 260px; background: var(--navy); color: #cdd9e5;
+    position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto;
+    display: flex; flex-direction: column; z-index: 100;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  #sidebar .brand { padding: 22px 18px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  #sidebar .brand .tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  #sidebar .brand h2 { font-size: 14px; color: #fff; margin-top: 4px; line-height: 1.3; }
+  #sidebar .brand .sub { font-size: 10px; color: #8da4b8; margin-top: 4px; }
+  #sidebar nav { padding: 14px 0; flex: 1; }
+  #sidebar nav a {
+    display: flex; align-items: center; gap: 10px; padding: 8px 18px;
+    color: #8da4b8; text-decoration: none; font-size: 12px; transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+  #sidebar nav a:hover, #sidebar nav a.active {
+    color: var(--accent); background: rgba(79,195,247,0.07);
+    border-left-color: var(--accent);
+  }
+  #sidebar nav a .num {
+    background: rgba(79,195,247,0.15); color: var(--accent);
+    font-size: 10px; font-weight: 700; border-radius: 4px;
+    padding: 1px 5px; min-width: 22px; text-align: center;
+  }
+  #sidebar .meta { padding: 14px 18px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 10px; color: #8da4b8; line-height: 1.8; }
+  #sidebar .pdf-btn {
+    margin: 12px 18px 18px; background: var(--accent); color: var(--navy);
+    border: none; border-radius: 6px; padding: 10px; font-weight: 700;
+    font-size: 12px; cursor: pointer; width: calc(100% - 36px); transition: opacity 0.2s;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  #sidebar .pdf-btn:hover { opacity: 0.85; }
+
+  /* MAIN */
+  #main { margin-left: 260px; flex: 1; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a3050 60%, #0d2440 100%);
+    padding: 40px 48px 36px;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  .hero .report-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .hero h1 { font-size: 48px; color: #fff; font-weight: 900; margin: 8px 0 6px; line-height: 1.1; }
+  .hero h1 span { color: var(--accent); }
+  .hero .desc { color: #a8bdd0; font-size: 14px; line-height: 1.6; max-width: 680px; margin-bottom: 18px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .badge { border: 1px solid rgba(79,195,247,0.35); color: #cdd9e5; font-size: 11px; padding: 4px 10px; border-radius: 20px; }
+  .badge.blue { background: rgba(21,101,192,0.35); border-color: rgba(21,101,192,0.6); }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 8px; }
+  .kpi-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 18px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .kpi-card .val { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+  .kpi-card .val.green { color: #66bb6a; }
+  .kpi-card .val.amber { color: #ffa726; }
+  .kpi-card .val.blue { color: var(--accent); }
+  .kpi-card .val.red { color: #ef5350; }
+  .kpi-card .lbl { font-size: 11px; color: #8da4b8; line-height: 1.3; }
+
+  /* SECTIONS */
+  .section { padding: 36px 48px; }
+  .section:nth-child(even) { background: #e8eaed; }
+  .sec-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+  .sec-num { background: var(--blue); color: #fff; font-size: 13px; font-weight: 900; padding: 6px 10px; border-radius: 6px; min-width: 36px; text-align: center; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .sec-header h2 { font-size: 22px; color: #1a2a3a; }
+  .sec-header h2 span { color: var(--blue); }
+
+  /* CARDS */
+  .card { background: var(--card); border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); margin-bottom: 20px; overflow: hidden; }
+  .card-header { background: var(--blue); color: #fff; font-size: 13px; font-weight: 700; padding: 10px 18px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .card-header.green { background: #2e7d32; }
+  .card-header.amber { background: #e65100; }
+  .card-body { padding: 18px; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: var(--blue); color: #fff; padding: 9px 12px; text-align: left; font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  td { padding: 8px 12px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.4; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  tr:hover td { background: #e8f4fd; }
+  tr.india-row td { background: var(--india-bg); border-left: 3px solid var(--india-border); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .src { font-size: 10px; color: #1565c0; }
+  .src a { color: #1565c0; }
+
+  /* ALERTS */
+  .alert { border-radius: 7px; padding: 12px 16px; font-size: 12px; line-height: 1.6; margin-bottom: 14px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .alert.info { background: #e3f2fd; border-left: 4px solid #1565c0; color: #0d47a1; }
+  .alert.warning { background: #fff8e1; border-left: 4px solid #f9a825; color: #7c5a00; }
+  .alert.success { background: #e8f5e9; border-left: 4px solid #2e7d32; color: #1b5e20; }
+  .alert.danger { background: #ffebee; border-left: 4px solid #c62828; color: #7f0000; }
+
+  /* PROP GRID */
+  .prop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .prop-item { background: #f4f6f9; border-radius: 7px; padding: 12px 14px; }
+  .prop-item .pl { font-size: 10px; text-transform: uppercase; color: #666; letter-spacing: 1px; font-weight: 700; }
+  .prop-item .pv { font-size: 13px; font-weight: 700; color: #1a2a3a; margin-top: 3px; }
+
+  /* SWOT */
+  .swot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .swot-q { border-radius: 8px; padding: 16px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .swot-q h4 { font-size: 13px; font-weight: 800; margin-bottom: 10px; }
+  .swot-q ul { padding-left: 16px; font-size: 12px; line-height: 1.9; }
+  .swot-q.s { background: #e8f5e9; }
+  .swot-q.s h4 { color: #2e7d32; }
+  .swot-q.w { background: #fce4ec; }
+  .swot-q.w h4 { color: #880e4f; }
+  .swot-q.o { background: #e3f2fd; }
+  .swot-q.o h4 { color: #1565c0; }
+  .swot-q.t { background: #fff8e1; }
+  .swot-q.t h4 { color: #f57f17; }
+
+  /* PORTER'S */
+  .porter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .porter-card { background: #fff; border-radius: 8px; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .porter-card.high { border-top: 4px solid #c62828; }
+  .porter-card.medium { border-top: 4px solid #f57f17; }
+  .porter-card.low { border-top: 4px solid #2e7d32; }
+  .porter-card h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #666; margin-bottom: 6px; }
+  .porter-card .intensity { font-size: 13px; font-weight: 800; margin-bottom: 6px; }
+  .porter-card.high .intensity { color: #c62828; }
+  .porter-card.medium .intensity { color: #f57f17; }
+  .porter-card.low .intensity { color: #2e7d32; }
+  .porter-card p { font-size: 11px; color: #444; line-height: 1.5; }
+
+  /* PESTLE */
+  .pestle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pestle-card { background: #fff; border-radius: 8px; padding: 14px; border-left: 4px solid var(--blue); box-shadow: 0 1px 3px rgba(0,0,0,0.07); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .pestle-card h4 { font-size: 12px; font-weight: 800; color: var(--blue); margin-bottom: 8px; }
+  .pestle-card ul { padding-left: 14px; font-size: 11px; color: #444; line-height: 1.8; }
+
+  /* BCG */
+  .bcg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bcg-q { border-radius: 8px; padding: 14px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .bcg-q h4 { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+  .bcg-q p { font-size: 11px; line-height: 1.5; }
+  .bcg-q.star { background: #fff9c4; }
+  .bcg-q.star h4 { color: #f9a825; }
+  .bcg-q.qmark { background: #e3f2fd; border: 2px solid #1565c0; }
+  .bcg-q.qmark h4 { color: #1565c0; }
+  .bcg-q.cow { background: #e8f5e9; }
+  .bcg-q.cow h4 { color: #2e7d32; }
+  .bcg-q.dog { background: #fce4ec; }
+  .bcg-q.dog h4 { color: #880e4f; }
+
+  /* VALUE CHAIN */
+  .vc-flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 16px; }
+  .vc-step { padding: 8px 14px; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; }
+  .vc-step.active { background: var(--blue); color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .vc-step.inactive { background: #dde3ea; color: #666; }
+  .vc-arrow { color: #aaa; font-size: 16px; }
+
+  /* VERDICT */
+  .verdict-box { background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border: 2px solid #2e7d32; border-radius: 10px; padding: 22px; margin-bottom: 20px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .verdict-box .vtag { font-size: 11px; font-weight: 700; color: #2e7d32; letter-spacing: 2px; text-transform: uppercase; }
+  .verdict-box h3 { font-size: 22px; font-weight: 900; color: #1b5e20; margin: 6px 0 10px; }
+  .verdict-box p { font-size: 13px; color: #2e4f2e; line-height: 1.7; }
+
+  /* NEXT STEPS */
+  .steps-list { display: flex; flex-direction: column; gap: 12px; }
+  .step-item { display: flex; align-items: flex-start; gap: 14px; }
+  .step-num { background: var(--blue); color: #fff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; flex-shrink: 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .step-item .step-content h4 { font-size: 13px; font-weight: 700; color: #1a2a3a; margin-bottom: 2px; }
+  .step-item .step-content p { font-size: 12px; color: #555; line-height: 1.5; }
+
+  /* REFS */
+  .ref-list { counter-reset: refs; list-style: none; }
+  .ref-list li { counter-increment: refs; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; }
+  .ref-list li::before { content: "[" counter(refs) "] "; font-weight: 700; color: var(--blue); }
+  .ref-list li a { color: var(--blue); word-break: break-all; }
+
+  /* TAGS */
+  .tag-green { background: #e8f5e9; color: #2e7d32; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .tag-amber { background: #fff8e1; color: #f57f17; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .tag-red { background: #ffebee; color: #c62828; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .tag-blue { background: #e3f2fd; color: #1565c0; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .tag-gray { background: #eceff1; color: #546e7a; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  /* ANSOFF */
+  .ansoff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ansoff-q { border-radius: 8px; padding: 14px; }
+  .ansoff-q h4 { font-size: 12px; font-weight: 800; margin-bottom: 5px; }
+  .ansoff-q p { font-size: 11px; line-height: 1.5; }
+  .ansoff-q.na { background: #f5f5f5; color: #999; }
+  .ansoff-q.rec { background: #e3f2fd; border: 2px solid var(--blue); }
+  .ansoff-q.rec h4 { color: var(--blue); }
+  .ansoff-q.med { background: #fff8e1; border: 1px solid #f9a825; }
+  .ansoff-q.med h4 { color: #f57f17; }
+  .ansoff-q.caut { background: #fce4ec; }
+  .ansoff-q.caut h4 { color: #880e4f; }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: #8da4b8; font-size: 11px; padding: 20px 48px; text-align: center; line-height: 1.7; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  /* PRINT */
+  @media print {
+    #sidebar { display: none !important; }
+    #main { margin-left: 0 !important; }
+    .section { break-inside: avoid; }
+    * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+  }
+
+  /* COLOR SUPPLY TAGS */
+  .supply-dom { background: #c8e6c9; color: #1b5e20; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; }
+  .supply-imp { background: #fff9c4; color: #7c5a00; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; }
+  .supply-spec { background: #fce4ec; color: #880e4f; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="brand">
+    <div class="tag">Market Intelligence Report · June 2026</div>
+    <h2>Tetrafluorohydroquinone (TFHQ)</h2>
+    <div class="sub">CAS 771-63-1 · C₆H₂F₄O₂ · MW 182.07</div>
+  </div>
+  <nav>
+    <a href="#s01" class="nav-link"><span class="num">01</span>Product Overview</a>
+    <a href="#s02" class="nav-link"><span class="num">02</span>Synthesis & Manufacturing</a>
+    <a href="#s03" class="nav-link"><span class="num">03</span>Applications & Markets</a>
+    <a href="#s04" class="nav-link"><span class="num">04</span>Market Analysis</a>
+    <a href="#s05" class="nav-link"><span class="num">05</span>Pricing Intelligence</a>
+    <a href="#s06" class="nav-link"><span class="num">06</span>Regulatory & Compliance</a>
+    <a href="#s07" class="nav-link"><span class="num">07</span>Target Customers</a>
+    <a href="#s08" class="nav-link"><span class="num">08</span>Strategic Frameworks</a>
+    <a href="#s09" class="nav-link"><span class="num">09</span>Feasibility & Recommendation</a>
+    <a href="#s10" class="nav-link"><span class="num">10</span>Sources & References</a>
+  </nav>
+  <div class="meta">
+    <strong style="color:#cdd9e5">Report Date:</strong> June 2026<br>
+    <strong style="color:#cdd9e5">Product:</strong> Tetrafluorohydroquinone<br>
+    <strong style="color:#cdd9e5">CAS:</strong> 771-63-1<br>
+    <strong style="color:#cdd9e5">HS Code (India):</strong> 2907 29 90<br>
+    <strong style="color:#cdd9e5">Status:</strong> Specialty Fluorochemical<br>
+    <strong style="color:#cdd9e5">Suppliers (Global):</strong> ~125
+  </div>
+  <button class="pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+</aside>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="report-tag">Market Intelligence Report · June 2026</div>
+  <h1>TETRAFLUOROHYDROQUINONE <span>(TFHQ)</span></h1>
+  <p class="desc">A comprehensive strategic intelligence report covering product properties, synthesis routes, global & India market analysis, pricing, regulatory compliance, and business feasibility — prepared for senior management decision-making.</p>
+  <div class="badges">
+    <span class="badge">CAS 771-63-1</span>
+    <span class="badge">C₆H₂F₄O₂ · MW 182.07</span>
+    <span class="badge">2,3,5,6-Tetrafluorobenzene-1,4-diol</span>
+    <span class="badge blue">Fluorinated Specialty Chemical</span>
+    <span class="badge blue">Pharma / Dye Intermediate</span>
+    <span class="badge blue">Energy Storage Electrolyte</span>
+    <span class="badge blue">Organic Electronics Monomer</span>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="val green">NICHE–HIGH VALUE</div><div class="lbl">Market Status<br>Specialty fluorochemical</div></div>
+    <div class="kpi-card"><div class="val blue">~USD 3–10M</div><div class="lbl">Est. TFHQ Global Market<br>(research/specialty; est.)</div></div>
+    <div class="kpi-card"><div class="val amber">USD 28–34B→56B</div><div class="lbl">Fluorochemicals Market 2025→2034<br>CAGR ~5.8% (context market)</div></div>
+    <div class="kpi-card"><div class="val red">~70%</div><div class="lbl">China Supply Share<br>Key concentration risk</div></div>
+    <div class="kpi-card"><div class="val blue">~4 India</div><div class="lbl">India Suppliers Listed<br>(importers/distributors)</div></div>
+    <div class="kpi-card"><div class="val green">~$18–$21/g</div><div class="lbl">Research Grade Price<br>(Sigma-Aldrich 95%, 5g pack)</div></div>
+  </div>
+</div>
+
+<!-- SECTION 01 -->
+<section class="section" id="s01">
+  <div class="sec-header">
+    <div class="sec-num">01</div>
+    <h2>Product Overview &amp; <span>Identity</span></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Chemical Identity</div>
+    <div class="card-body">
+      <div class="prop-grid">
+        <div class="prop-item"><div class="pl">IUPAC Name</div><div class="pv">2,3,5,6-Tetrafluorobenzene-1,4-diol</div></div>
+        <div class="prop-item"><div class="pl">CAS Number</div><div class="pv">771-63-1</div></div>
+        <div class="prop-item"><div class="pl">Molecular Formula</div><div class="pv">C₆H₂F₄O₂</div></div>
+        <div class="prop-item"><div class="pl">Molecular Weight</div><div class="pv">182.07 g/mol</div></div>
+        <div class="prop-item"><div class="pl">PubChem CID</div><div class="pv">9406 (verified)</div></div>
+        <div class="prop-item"><div class="pl">InChI Key</div><div class="pv">ZSDAMBJDFDRLSS-UHFFFAOYSA-N</div></div>
+        <div class="prop-item"><div class="pl">SMILES</div><div class="pv">FC1=C(F)C(O)=C(F)C(F)=C1O</div></div>
+        <div class="prop-item"><div class="pl">EC Number</div><div class="pv">212-237-9</div></div>
+        <div class="prop-item"><div class="pl">MDL Number</div><div class="pv">MFCD00002340</div></div>
+        <div class="prop-item"><div class="pl">DSSTox Substance ID</div><div class="pv">DTXSID70227888</div></div>
+      </div>
+      <p style="margin-top:12px;font-size:11px;color:#666">Sources: <a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook</a> | <a href="https://cymitquimica.com/cas/771-63-1/">CymitQuimica</a> | <a href="https://www.alfa-chemistry.com/product/tetrafluorohydroquinone-cas-771-63-1-446081.html">Alfa Chemistry</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Introduction</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.8;color:#333">Tetrafluorohydroquinone (TFHQ), formally known as 2,3,5,6-tetrafluorobenzene-1,4-diol, is a perfluorinated derivative of hydroquinone in which all four aromatic ring hydrogens are replaced by fluorine atoms. This substitution profoundly modifies the electronic character of the benzene ring: the four electron-withdrawing fluorine atoms dramatically lower the HOMO energy, enhancing oxidising power and redox activity compared to unsubstituted hydroquinone. TFHQ exists as a slightly beige-to-white crystalline powder at room temperature and is commercially available from approximately 125 global suppliers — the majority based in China. Its dual electrophilic aromatic ring (activated by F-substitution for nucleophilic aromatic substitution, SNAr) combined with the phenol/quinone redox couple makes it uniquely valuable in: <strong>photographic chemistry</strong> (photographic developer), <strong>fluorinated polymer synthesis</strong>, <strong>energy storage</strong> (redox flow battery and Li–S battery catholytes), <strong>pharmaceutical &amp; dye intermediates</strong>, and <strong>organic electronics</strong> research (OLEDs, organic semiconductors). India has no known domestic production; all supply is import-dependent, creating a first-mover import and distribution opportunity.</p>
+    </div>
+  </div>
+
+  <p style="font-size:11px;color:#888;margin-bottom:10px">Synonyms: 2,3,5,6-Tetrafluorohydroquinone · 1,4-Dihydroxy-2,3,5,6-tetrafluorobenzene · Hydroquinone, tetrafluoro- · Tetrafluoro-1,4-dihydroquinone · 1,2,4,5-Tetrafluoro-3,6-dihydroxybenzene · Perfluorobenzene-1,4-diol</p>
+
+  <div class="card">
+    <div class="card-header">Physical &amp; Chemical Properties</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Property</th><th>Value</th><th>Source</th></tr>
+        <tr><td>Appearance</td><td>Slightly beige to white crystalline powder / solid</td><td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook</a></td></tr>
+        <tr><td>Physical State (RT)</td><td>Solid (crystalline)</td><td class="src"><a href="https://www.smolecule.com/products/s703543">Smolecule</a></td></tr>
+        <tr><td>Melting Point</td><td>~88–96°C (literature range; confirm with CoA)</td><td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook</a></td></tr>
+        <tr><td>Boiling Point</td><td>Not widely published; estimated >200°C (decomposes before boiling at atm)</td><td class="src">Estimated — class analogy</td></tr>
+        <tr><td>Density</td><td>Not widely published for solid; ~1.6–1.8 g/cm³ estimated (fluorinated benzene diol class)</td><td class="src">Class estimate</td></tr>
+        <tr><td>Flash Point</td><td>Not applicable (solid crystalline; low fire risk under normal handling)</td><td class="src">GHS classification</td></tr>
+        <tr><td>Solubility</td><td>Soluble in polar aprotic solvents (DMF, DMSO, THF); limited aqueous solubility; insoluble in nonpolar solvents</td><td class="src"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1385894721019021">ScienceDirect, 2021</a></td></tr>
+        <tr><td>Stability / Storage</td><td>Stable under normal storage; store sealed in cool, dry place under inert gas; avoid prolonged exposure to moisture. No inhibitor required (unlike vinyl phenols).</td><td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook</a></td></tr>
+        <tr><td>Redox Behavior</td><td>Quasi-reversible TFHQ/TFBQ (tetrafluoro-p-benzoquinone) redox couple; electrochemically active catholyte</td><td class="src"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1572665716303617">ScienceDirect, 2016</a></td></tr>
+        <tr><td>GHS Hazards</td><td>H315 (skin irritation), H319 (eye irritation) — moderate hazard; Acute Tox. 4 oral per Sigma-Aldrich SDS</td><td class="src"><a href="https://www.sigmaaldrich.com/US/en/product/aldrich/104361">Sigma-Aldrich</a></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Product Grades</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Grade</th><th>Purity</th><th>Primary Use</th><th>Key Suppliers</th></tr>
+        <tr><td>Research / Analytical Grade</td><td>≥97–98% (GC)</td><td>Organic synthesis, energy storage research, photographic development studies, reference use</td><td>Sigma-Aldrich, TCI Chemicals, Oakwood Chemical</td></tr>
+        <tr><td>Technical Grade</td><td>95%</td><td>Polymer synthesis, fluorinated intermediate production, pilot-scale battery research</td><td>SynQuest, Chinese manufacturers</td></tr>
+        <tr><td>Custom / Bulk (RFQ)</td><td>To specification</td><td>Large-scale chemical synthesis, API intermediate production</td><td>Henan Aochuang, Finetech Industry (China)</td></tr>
+      </table>
+      <p style="margin-top:8px;font-size:11px;color:#666">Sources: <a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook Supplier List</a> | <a href="https://www.sigmaaldrich.com/US/en/product/aldrich/104361">Sigma-Aldrich #104361</a> | <a href="https://www.tcichemicals.com">TCI T2003</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">HS Codes</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Region</th><th>HS Code</th><th>Description</th></tr>
+        <tr class="india-row"><td>🇮🇳 India (ITC-HS)</td><td><strong>2907 29 90</strong></td><td>Polyphenols / other polyhydric phenols, NEC — fluorinated derivatives. Cross-check against 2907 19 90 (monophenols NEC) with customs agent; classification depends on whether OH groups are phenolic di-substituted.</td></tr>
+        <tr><td>🌐 International (WCO)</td><td><strong>2907.29</strong></td><td>Polyphenols — others (diol = dihydric phenol classification likely)</td></tr>
+      </table>
+      <div class="alert warning" style="margin-top:12px">⚠ HS code must be verified with a licensed customs agent before import/export. Fluorinated phenols may attract additional scrutiny at customs. Confirm with DGFT (India) and relevant customs authority prior to first shipment.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02 -->
+<section class="section" id="s02">
+  <div class="sec-header">
+    <div class="sec-num">02</div>
+    <h2>Synthesis &amp; <span>Manufacturing</span></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Key Synthesis Routes</div>
+    <div class="card-body">
+      <table>
+        <tr><th>#</th><th>Route Name</th><th>Starting Materials</th><th>Key Conditions / Steps</th><th>Yield</th><th>Reference</th></tr>
+        <tr>
+          <td><strong>1</strong></td>
+          <td><strong>Diazotization of 2,3,5,6-tetrafluoro-4-aminophenol</strong><br><span class="tag-blue">Primary Industrial Route</span></td>
+          <td>2,3,5,6-Tetrafluoro-4-aminophenol; CuSO₄·5H₂O; NaOH or KOH (5–10% wt.); HCl</td>
+          <td>Diazotization at 90–110°C in water/CuSO₄ mixture for 1–2 hours. Heat under reflux. Stratify, extract oil layer with NaOH/KOH lye. Acidify lye layer with HCl to precipitate TFHQ product.</td>
+          <td>Moderate–High (industrially optimized by Chinese producers)</td>
+          <td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook (CAS 771-63-1 Synthesis)</a></td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td><strong>Direct Fluorination of Hydroquinone</strong><br><span class="tag-amber">Research Route</span></td>
+          <td>Hydroquinone; fluorinating agents (XeF₂, Selectfluor™, elemental F₂)</td>
+          <td>Electrophilic fluorination of aromatic ring; requires controlled conditions to achieve regioselective tetra-substitution. Selectfluor™ (N-fluorobenzenesulfonimide) preferred for laboratory scale.</td>
+          <td>Variable; selectivity challenge for tetra-substitution</td>
+          <td class="src"><a href="https://www.smolecule.com/products/s703543">Smolecule Technical Note (2023)</a></td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td><strong>Hydrolysis of Fluorinated Precursors (Pentafluorophenol route)</strong><br><span class="tag-blue">Multi-step Synthetic</span></td>
+          <td>2,3,5,6-Tetrafluorophenol (or pentafluorophenol); oxidant (CumOOH, IOB, or NADPH system); mild acid workup</td>
+          <td>Enzymatic/cytochrome P450-mediated hydroxylation (biochemical route). Alternatively, controlled hydrolysis of pentafluorophenol under basic conditions removes para-F, then reduction of intermediate tetrafluorobenzoquinone gives TFHQ. Predominantly a metabolite formation route in vivo; adapted for preparative use.</td>
+          <td>Moderate (preparative biochemical) / variable (chemical)</td>
+          <td class="src"><a href="https://www.sigmaaldrich.com/catalog/papers/8292746">Sigma-Aldrich Paper | OSTI DOE (Cytochrome P450 study)</a></td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td><strong>Self-polymerization feedstock / SNAr route</strong><br><span class="tag-green">Emerging — Battery Materials</span></td>
+          <td>TFHQ monomer; K₂CO₃; DMF solvent</td>
+          <td>TFHQ dissolved in DMF, heated to 80°C, K₂CO₃ added, then heated to 145°C for 24h → poly(TFHQ) (PTFHQ). Further reaction with elemental sulfur at elevated temperature → PTFHQS organosulfur copolymer for Li–S battery cathode. Route relevant for battery materials manufacturing customers.</td>
+          <td>High (for polymer product)</td>
+          <td class="src"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1385894721019021">ScienceDirect, Chemical Engineering Journal, 2021</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Key Raw Materials</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Material</th><th>Source / Origin</th><th>India Availability</th><th>Relevance</th></tr>
+        <tr><td>2,3,5,6-Tetrafluoro-4-aminophenol</td><td>Specialty fluorochemical; China-dominant</td><td><span class="supply-imp">Importable (China)</span></td><td>Primary starting material for Route 1 (industrial diazotization route)</td></tr>
+        <tr><td>Hydroquinone</td><td>Commodity; multiple global sources; India produces via Solvay (Camlin Fine Sciences)</td><td><span class="supply-dom">Widely Available</span></td><td>Starting material for Route 2 (direct fluorination)</td></tr>
+        <tr><td>Selectfluor™ / XeF₂</td><td>Specialty fluorinating agents; US, Germany</td><td><span class="supply-spec">Imported Specialty</span></td><td>Fluorinating agent for Route 2</td></tr>
+        <tr><td>CuSO₄, NaOH/KOH, HCl</td><td>Commodity chemicals; India production available</td><td><span class="supply-dom">Widely Available</span></td><td>Process chemicals for Route 1</td></tr>
+        <tr><td>2,3,5,6-Tetrafluorophenol</td><td>Specialty; China, Japan</td><td><span class="supply-imp">Importable</span></td><td>Starting material for Route 3</td></tr>
+        <tr><td>DMF, K₂CO₃</td><td>Commodity; India production available</td><td><span class="supply-dom">Widely Available</span></td><td>Solvent/reagent for Route 4 (polymer route)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Manufacturing Complexity Assessment</div>
+    <div class="card-body">
+      <div class="prop-grid">
+        <div class="prop-item"><div class="pl">Complexity Rating</div><div class="pv" style="color:#e65100">MEDIUM</div></div>
+        <div class="prop-item"><div class="pl">Key Challenge</div><div class="pv">Sourcing fluorinated aromatic starting material (tetrafluoro-aminophenol); fluorination chemistry expertise</div></div>
+        <div class="prop-item"><div class="pl">Temperature Sensitivity</div><div class="pv">Diazotization step requires precise 90–110°C control; product is thermally stable as solid</div></div>
+        <div class="prop-item"><div class="pl">Handling vs. 3-VP</div><div class="pv">EASIER than 3-vinylphenol — no polymerization risk; room-temp stable solid; no TBC inhibitor needed</div></div>
+        <div class="prop-item"><div class="pl">Storage Requirements</div><div class="pv">Sealed container, cool dry place, inert gas atmosphere recommended; NO cold-chain requirement</div></div>
+        <div class="prop-item"><div class="pl">Hazard Profile</div><div class="pv">H315/H319 irritant; Acute Tox 4 oral — standard PPE (gloves, goggles, fume hood)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert success">🇮🇳 <strong>India Strategic Note:</strong> India has a large base of HF-chemistry and fluorochemical companies (Gujarat Fluorochemicals / INOX GFL, SRF Ltd., Navin Fluorine International). These are not currently synthesizing TFHQ but represent potential domestic manufacturing partners for a JV or toll-manufacturing arrangement in a medium-term scenario. India's commodity hydroquinone supply (Camlin Fine Sciences, Solvay India) gives a raw material base advantage for the direct fluorination route if selective fluorination expertise can be licensed or developed.</div>
+</section>
+
+<!-- SECTION 03 -->
+<section class="section" id="s03">
+  <div class="sec-header">
+    <div class="sec-num">03</div>
+    <h2>Industry Applications, End-Products &amp; <span>Application Market Sizes</span></h2>
+  </div>
+
+  <!-- 3.1 -->
+  <div class="card">
+    <div class="card-header">3.1 — Photographic Chemistry (Historical / Niche Specialty)</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.7;margin-bottom:14px">TFHQ's primary classical application is as a <strong>photographic developer</strong>, where its redox activity (TFHQ/TFBQ couple) allows it to reduce exposed silver halides to metallic silver in photographic emulsions. Though silver halide photography has sharply declined commercially, TFHQ remains used in specialty photographic applications (X-ray films, aerial photography, specialty emulsions, scientific imaging) and is referenced in several older photographic chemistry patents.</p>
+      <table>
+        <tr><th>End-Product / Process</th><th>Details</th><th>Key Companies</th></tr>
+        <tr><td>Specialty photographic developers</td><td>Used in black-and-white and specialty emulsions as primary or supplementary developer</td><td>Kodak, Fujifilm (legacy); niche specialty film manufacturers</td></tr>
+        <tr><td>X-ray film development</td><td>Medical/industrial X-ray processing solutions</td><td>AGFA (Belgium), Fujifilm Healthcare</td></tr>
+        <tr><td>Scientific research emulsions</td><td>Nuclear physics track emulsions, holographic recording media</td><td>Ilford, Tasma (Russia)</td></tr>
+      </table>
+      <div class="alert warning" style="margin-top:10px">⚠ Silver halide photography is a declining market. This application represents limited and shrinking demand for TFHQ. Commercial significance is low for new market entrants targeting growth applications.</div>
+    </div>
+  </div>
+
+  <!-- 3.2 -->
+  <div class="card">
+    <div class="card-header">3.2 — Fluorinated Polymer Synthesis (Specialty Monomers & Building Blocks)</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.7;margin-bottom:14px">TFHQ participates in nucleophilic aromatic substitution (SNAr) reactions through its electron-deficient ring, enabling synthesis of fluorinated poly(arylene ether)s, polysulfones, and other high-performance polymers. Its SNAr reactivity also enables self-polymerization via OH groups to form crosslinked poly(TFHQ) networks with high thermal stability and electrochemical activity.</p>
+      <table>
+        <tr><th>End-Product / Polymer</th><th>Specific Use</th><th>Key Companies</th></tr>
+        <tr><td>Poly(tetrafluorohydroquinone) — PTFHQ</td><td>Crosslinked fluorinated polymer; electrode-active material in Li–S batteries; cathode framework</td><td>Academic/R&D labs; CATL (China), Samsung SDI (research)</td></tr>
+        <tr><td>PTFHQS (TFHQ–Sulfur copolymer)</td><td>High-sulfur content cathode material (>60% S by wt.) for high-energy Li–S batteries; long-cycle stable</td><td>Research stage; battery startups; CATL, BYD (potential)</td></tr>
+        <tr><td>Fluorinated poly(arylene ether sulfone)</td><td>High-performance polymer membranes for fuel cells, gas separation</td><td>Solvay, Victrex, Toray</td></tr>
+        <tr><td>Dye/colorant intermediates</td><td>Fluorinated aromatic building block for synthesis of reactive dyes and specialty colorants</td><td>Huntsman (US), Archroma (Switzerland), Jay Chemical (India)</td></tr>
+      </table>
+      <div class="card" style="margin-top:14px;margin-bottom:0">
+        <div class="card-header" style="font-size:11px">Application Market Sizes — Fluorinated Specialty Polymers / Li–S Batteries</div>
+        <table>
+          <tr><th>Market Segment</th><th>Global Market Size</th><th>CAGR</th><th>Key Players</th><th>Source</th></tr>
+          <tr><td>Global Fluorochemicals Market</td><td>USD 33.8B (2025) → USD 56B (2034)</td><td>5.8%</td><td>Chemours, AGC, Daikin, Solvay, Arkema</td><td class="src"><a href="https://straitsresearch.com/report/fluorochemicals-market">Straits Research, 2025</a></td></tr>
+          <tr><td>Organic Fluorochemicals sub-market</td><td>USD 15.2B (2024) → USD 18.7B (2031)</td><td>3.0%</td><td>BASF, Merck KGaA, Honeywell</td><td class="src"><a href="https://www.reanin.com/reports/organic-fluorochemicals-market">ReAnIn, Nov 2025</a></td></tr>
+          <tr><td>Fluorinated Fine Chemicals (pharma/electronics)</td><td>USD 4.2B Asia-Pacific (2024) → USD 6.2B (2033)</td><td>4.8%</td><td>AGC, Merck KGaA, Thermo Fisher</td><td class="src"><a href="https://www.verifiedmarketreports.com/product/fluorinated-fine-chemicals-market/">Verified Market Reports, 2026</a></td></tr>
+          <tr><td>Li–S Battery Market (TFHQ target downstream)</td><td>USD 0.9B (2024) → USD 6.0B (2030E)</td><td>~30%+</td><td>CATL, LG Energy, Samsung SDI, QuantumScape</td><td class="src">General battery industry data</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.3 -->
+  <div class="card">
+    <div class="card-header">3.3 — Energy Storage: Redox Flow Batteries & Li–S Batteries (Emerging High-Growth)</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.7;margin-bottom:14px">This is the fastest-growing application for TFHQ. The TFHQ/TFBQ redox couple provides a stable, quasi-reversible electrochemical system ideal for organic catholyte materials in hybrid redox flow batteries (HRFBs). Published research demonstrates TFHQ's superiority over non-fluorinated analogs: 80% energy efficiency, stable over 40 charge-discharge cycles, negligible capacity loss at room temperature. In Li–S batteries, PTFHQS copolymer cathodes achieve high sulfur loading and long-cycle stability.</p>
+      <table>
+        <tr><th>Application</th><th>Specific Role</th><th>Performance / Advantage</th><th>Key Researchers / Companies</th></tr>
+        <tr><td>Hybrid Redox Flow Battery (HRFB) Catholyte</td><td>TFHQ as electroactive catholyte paired with Cd nanoparticle anode; voltage range 0.8–1.6V</td><td>80% energy efficiency; 40-cycle stability; coulombic efficiency superior to 3-fluorocatechol analogs</td><td>Academic R&D (Iran, China); emerging energy storage startups</td></tr>
+        <tr><td>Li–S Battery Cathode (PTFHQS copolymer)</td><td>TFHQ polymerized with S via SNAr to make organic polysulfide cathode with high S content</td><td>High energy density; flexible electrode; thermostable; long-cycling</td><td>Chinese universities; CATL R&D; battery research institutes</td></tr>
+        <tr><td>Organic Redox Flow Battery Electrolyte</td><td>Quinone-class electrolyte active material</td><td>Fluorine substitution improves solubility and redox potential vs. unsubstituted quinones</td><td>MIT Energy Initiative; Harvard SEAS; Flow Battery Research</td></tr>
+      </table>
+      <div class="card" style="margin-top:14px;margin-bottom:0">
+        <div class="card-header" style="font-size:11px">Application Market Sizes — Energy Storage</div>
+        <table>
+          <tr><th>Market Segment</th><th>Global Market Size</th><th>CAGR</th><th>Key Players</th><th>Source</th></tr>
+          <tr><td>Redox Flow Battery Market</td><td>USD 0.5B (2024) → USD 2.5B+ (2030E)</td><td>~20%</td><td>Vanadium Flow Corp, Invinity, ESS Inc., VFlowTech</td><td class="src">General energy storage industry data</td></tr>
+          <tr><td>Li–S Battery Market</td><td>USD 0.9B (2024) → USD 6B (2030E)</td><td>~30%</td><td>CATL, Samsung SDI, Sion Power, LG Energy Solution</td><td class="src">General battery industry data</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.4 -->
+  <div class="card">
+    <div class="card-header">3.4 — Pharmaceutical &amp; Dye Intermediates</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.7;margin-bottom:14px">TFHQ serves as a versatile building block for synthesizing fluorinated pharmaceuticals (where C–F bonds improve metabolic stability, lipophilicity, and binding affinity) and specialty fluorinated dyes. Its SNAr-reactive aromatic ring enables efficient substitution with N, O, or S nucleophiles in pharmaceutical synthesis programs. Biomedical studies also indicate antioxidant properties and potential in cancer research model compounds.</p>
+      <table>
+        <tr><th>Application</th><th>Specific Use</th><th>Key Companies</th></tr>
+        <tr><td>Fluorinated pharma intermediates</td><td>Building block for novel fluorinated drug candidates (oncology, CNS); SNAr chemistry with amines/thiols gives C–N / C–S bonds at specific ring positions</td><td>AGC Chemicals (JP/SP), Fluorochem (UK), Syncom (Netherlands)</td></tr>
+        <tr><td>Specialty dye intermediates</td><td>Fluorinated benzene core for reactive dyes, disperse dyes for high-fastness applications</td><td>Huntsman Corporation (US), Archroma (CH), Jay Chemical (India)</td></tr>
+        <tr><td>Antioxidant / biochemical research</td><td>Studied for antioxidant activity; P450 enzyme model compound; toxicology research standard</td><td>Academic labs; CRO sector</td></tr>
+        <tr><td>Fluorinated pesticide intermediates</td><td>Fluorinated phenol building block for agrochemical active ingredients</td><td>Syngenta, BASF CropScience, Corteva</td></tr>
+      </table>
+      <div class="alert info" style="margin-top:10px">ℹ <strong>Note on Pharma Applications:</strong> Approximately 20% of all approved pharmaceutical compounds now contain fluorine. Fluorinated aromatic diols like TFHQ serve as versatile scaffolds for multi-step API synthesis. While TFHQ is not itself an API, demand from CDMO/CRO customers synthesizing fluorinated drug candidates is a growing driver. Source: Mordor Intelligence Fluorochemicals Report (2025).</div>
+    </div>
+  </div>
+
+  <!-- 3.5 -->
+  <div class="card">
+    <div class="card-header">3.5 — Organic Electronics (OLEDs, Organic Semiconductors)</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.7;margin-bottom:14px">TFHQ's electron-withdrawing fluorine substituents give it p-type (acceptor) electronic character. This makes it a candidate material for organic photovoltaics (OPV), organic field-effect transistors (OFETs), and OLED dopant systems where high electron affinity and electrochemical stability are valued. Research is early-stage but growing given the broader push toward organic electronics.</p>
+      <table>
+        <tr><th>Application</th><th>Role</th><th>Key Companies / Research Groups</th></tr>
+        <tr><td>OLEDs</td><td>Potential reducing agent / emitter auxiliary in organic light-emitting systems</td><td>Samsung Display, LG Chem, Merck KGaA (organic electronics division)</td></tr>
+        <tr><td>Polymer conductors</td><td>TFHQ-based polymers modify conductivity/thermal stability in functional coatings</td><td>Heraeus, Agfa, academic research</td></tr>
+        <tr><td>Organic photovoltaics</td><td>Fluorinated acceptor-type building block for bulk heterojunction OPV</td><td>Heliatek (Germany), research stage globally</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3.6 -->
+  <div class="card">
+    <div class="card-header">3.6 — Research &amp; Reference Standards</div>
+    <div class="card-body">
+      <p style="font-size:13px;line-height:1.7;margin-bottom:14px">TFHQ is widely catalogued as a research chemical and reference standard by major lab chemical suppliers globally. It is used in academic labs for synthesis of fluorinated organic compounds, electrochemical studies, enzyme kinetics research (cytochrome P450 model substrate), toxicology studies, and materials science exploration.</p>
+      <table>
+        <tr><th>Application</th><th>Specific Use</th><th>Key Buyers</th></tr>
+        <tr><td>Research reagent / building block</td><td>Fluorinated aromatic building block for custom synthesis; teaching labs</td><td>Universities globally; LGC Standards, Sigma-Aldrich, TCI</td></tr>
+        <tr><td>Enzyme kinetics model substrate</td><td>P450-mediated oxidative defluorination studies; metabolic pathway research</td><td>Pharma R&D, toxicology CROs</td></tr>
+        <tr><td>Electrochemical research</td><td>Quinone/hydroquinone redox couple studies; battery electrolyte screening</td><td>Energy research institutes; MIT, Harvard, IIT</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 04 -->
+<section class="section" id="s04">
+  <div class="sec-header">
+    <div class="sec-num">04</div>
+    <h2>Market <span>Analysis</span></h2>
+  </div>
+
+  <div class="alert warning">⚠ <strong>Data Note:</strong> Dedicated market data for TFHQ (CAS 771-63-1) specifically is absent from public market reports — it is a niche specialty chemical. Market sizes below refer to relevant proxy markets (fluorochemicals, specialty fluorinated fine chemicals) or are triangulated estimates for TFHQ specifically. All estimates are clearly flagged.</div>
+
+  <div class="card">
+    <div class="card-header">4A — Global Market</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+        <tr><td>TFHQ global market size (est.)</td><td>Est. USD 3–10M (niche research/specialty chemical; no dedicated public market report). Triangulated from supplier count (~125 global suppliers) and pricing (~$18–21/g research grade).</td><td class="src">Estimated — proxy from supplier count × avg pricing × estimated research volumes. ChemicalBook supplier count.</td></tr>
+        <tr><td>Broader fluorinated fine chemicals market (proxy)</td><td>USD 4.2B Asia-Pacific (2024) → USD 6.2B (2033); CAGR ~4.8%</td><td class="src"><a href="https://www.verifiedmarketreports.com/product/fluorinated-fine-chemicals-market/">Verified Market Reports, 2026</a></td></tr>
+        <tr><td>Global fluorochemicals (macro context)</td><td>USD 33.8B (2025) → USD 56.15B (2034); CAGR 5.8%</td><td class="src"><a href="https://straitsresearch.com/report/fluorochemicals-market">Straits Research, Mar 2025</a></td></tr>
+        <tr><td>Key TFHQ demand drivers</td><td>Growing Li–S battery R&D; OLED/organic electronics research; fluorinated pharma intermediates; continued specialty photography / imaging</td><td class="src">Multiple industry sources</td></tr>
+        <tr><td>Number of global suppliers</td><td>~125 (ChemicalBook, 2025–2026); ~73 in China, ~18 UK, ~16 USA, ~3 Japan, ~4 India, ~3 Germany</td><td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook Global Supplier Count</a></td></tr>
+        <tr><td>Growth outlook</td><td>CAGR for specialty fluorochemicals: 4–7% (conservative to optimistic). Upside scenario if Li–S batteries commercialize at scale: demand could grow 2–5x from current niche volumes by 2030.</td><td class="src">Estimated — industry analogy</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">4B — India Market</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Metric</th><th>Assessment</th><th>Source</th></tr>
+        <tr class="india-row"><td>India domestic TFHQ production</td><td>Negligible to nil — no known commercial manufacturer of TFHQ in India. 4 India-listed suppliers on ChemicalBook are importers/distributors, NOT manufacturers.</td><td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook, 2025</a></td></tr>
+        <tr class="india-row"><td>India supply dependency</td><td>~100% import-dependent; primarily sourced from China. UK and US supply available at premium (research grade).</td><td class="src">ChemicalBook supplier analysis</td></tr>
+        <tr class="india-row"><td>India pharma fluorochemical demand</td><td>Growing rapidly — ~20% of new APIs under development contain fluorine; India's CDMO/CRO sector (Divi's, Laurus, Syngene) needs fluorinated aromatic building blocks including TFHQ class</td><td class="src"><a href="https://www.mordorintelligence.com/industry-reports/fluorochemical-market">Mordor Intelligence, 2025</a></td></tr>
+        <tr class="india-row"><td>India energy storage demand</td><td>India's National Green Hydrogen Mission + battery storage mandate driving research into novel battery chemistries. IIT labs and CSIR institutes actively researching organic battery electrolytes including quinones.</td><td class="src">India government policy documents</td></tr>
+        <tr class="india-row"><td>India HF/fluorochemical manufacturing base</td><td>India has established fluorochemical manufacturers: GFL (INOX), SRF Ltd., Navin Fluorine International, Aarti Industries (fluorine division) — potential future manufacturing partners for TFHQ.</td><td class="src"><a href="https://gfl.co.in/">GFL (INOX) website</a></td></tr>
+        <tr class="india-row"><td>Key consuming clusters</td><td>Pharma/CRO: Hyderabad (Genome Valley), Ahmedabad, Mumbai | R&D/Universities: Bengaluru (IISc), Mumbai (ICT), Chennai (IIT Madras) | Specialty Chemicals: Vapi/Ankleshwar (Gujarat)</td><td class="src">India industry geography knowledge</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">4C — Major Manufacturing Countries &amp; Supply Landscape</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Country</th><th>Role</th><th>Est. Share</th><th>Notes</th></tr>
+        <tr><td>🇨🇳 China</td><td>Dominant manufacturer & exporter</td><td><span class="tag-red">~65–70%</span></td><td>73 of 125 listed global suppliers; Henan Aochuang Chemical, Finetech Industry and others; competitive pricing but quality control variability</td></tr>
+        <tr><td>🇬🇧 UK</td><td>Research/analytical grade supplier</td><td><span class="tag-amber">~12–15%</span></td><td>18 UK-listed suppliers; Robinson Brothers, Fluorochem, Fluorochem Ltd.; high-purity research and pharma grades; premium pricing</td></tr>
+        <tr><td>🇺🇸 USA</td><td>Research/analytical supplier + distribution</td><td><span class="tag-amber">~10–12%</span></td><td>16 US-listed suppliers; Sigma-Aldrich (Merck), Oakwood Chemical, SynQuest Labs; sourced from China/UK for resale</td></tr>
+        <tr><td>🇯🇵 Japan</td><td>Specialty fine chemical grade</td><td><span class="tag-green">~3–5%</span></td><td>3 Japan-listed suppliers; TCI Chemicals — research grade (T2003); high purity, reliable quality</td></tr>
+        <tr><td>🇩🇪 Germany</td><td>Pharma/research grade</td><td><span class="tag-green">~2–4%</span></td><td>3 Germany-listed suppliers; Merck KGaA, ABCR GmbH; pharmaceutical-grade supply</td></tr>
+        <tr class="india-row"><td>🇮🇳 India</td><td>Import-dependent; 4 listed distributor/importers only</td><td><span class="tag-red">0% production → Opportunity</span></td><td>No known Indian manufacturer; 4 India suppliers are importers. First-mover opportunity for India-based distributor/importer.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">4D — Major Global Manufacturers &amp; Suppliers</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Company</th><th>Country</th><th>Role</th><th>Website</th></tr>
+        <tr><td>Sigma-Aldrich (Merck KGaA)</td><td>USA/Germany</td><td>Research grade distributor (Product #104361, 95%, 5g = $106)</td><td class="src"><a href="https://www.sigmaaldrich.com/US/en/product/aldrich/104361">sigmaaldrich.com</a></td></tr>
+        <tr><td>TCI Chemicals</td><td>Japan</td><td>Research grade manufacturer/supplier (T2003, >97% GC, 5g = $89)</td><td class="src"><a href="https://www.tcichemicals.com">tcichemicals.com</a></td></tr>
+        <tr><td>Oakwood Chemical</td><td>USA</td><td>Research grade (98%, 1g = $12)</td><td class="src">oakwoodchemical.com</td></tr>
+        <tr><td>SynQuest Laboratories</td><td>USA</td><td>Research chemical (95%, 1g = $10)</td><td class="src">synquestlabs.com</td></tr>
+        <tr><td>Henan Aochuang Chemical Co., Ltd.</td><td>China</td><td>Manufacturer / bulk supplier / RFQ</td><td class="src"><a href="https://www.chemicalbook.com">GuideChem listed</a></td></tr>
+        <tr><td>Finetech Industry Ltd.</td><td>China</td><td>Custom synthesis, RFQ bulk</td><td class="src">finetechnology-ind.com</td></tr>
+        <tr><td>Robinson Brothers Ltd.</td><td>UK</td><td>Specialty chemical supplier</td><td class="src">robinsonbrothers.co.uk</td></tr>
+        <tr><td>Fluorochem Ltd.</td><td>UK</td><td>Specialty fluorochemical supplier/distributor</td><td class="src">fluorochem.co.uk</td></tr>
+        <tr><td>Alfa Chemistry</td><td>USA (global sourcing)</td><td>Research chemical catalog</td><td class="src"><a href="https://www.alfa-chemistry.com/product/tetrafluorohydroquinone-cas-771-63-1-446081.html">alfa-chemistry.com</a></td></tr>
+        <tr><td>BOC Sciences</td><td>USA</td><td>Research and pharma-grade supply</td><td class="src"><a href="https://polymer.bocsci.com/product/tetrafluorohydroquinone-cas-771-63-1-379624.html">bocsci.com</a></td></tr>
+        <tr class="india-row"><td>TCI Chemicals (India) Pvt. Ltd.</td><td>🇮🇳 India</td><td>Distributor (Japan TCI sourcing) — research grade in India market</td><td class="src">tcichemicals.com/IN</td></tr>
+        <tr class="india-row"><td>Pharmaffiliates Analytics</td><td>🇮🇳 India</td><td>CRO/analytical supplier — import/distribute for pharma R&D</td><td class="src">pharmaffiliates.com</td></tr>
+        <tr class="india-row"><td>MuseChem India</td><td>🇮🇳 India</td><td>Research chemicals import/distribution</td><td class="src"><a href="https://www.musechem.com/product/tetrafluorohydroquinone-771-63-1/">musechem.com</a></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 05 -->
+<section class="section" id="s05">
+  <div class="sec-header">
+    <div class="sec-num">05</div>
+    <h2>Pricing <span>Intelligence</span></h2>
+  </div>
+
+  <div class="alert info">ℹ <strong>Pricing Note:</strong> TFHQ is currently sold primarily in research quantities (grams to 100s of grams). Bulk commercial pricing (kg+) requires direct RFQ. Prices below compiled from publicly listed sources (2025 data). Unlike 3-Vinylphenol, TFHQ is a solid with NO cold-chain requirement — logistics are significantly simpler and cheaper.</div>
+
+  <div class="card">
+    <div class="card-header">Price by Quantity Scale</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Quantity Scale</th><th>Price Range (USD)</th><th>Approx. INR</th><th>Grade</th><th>Source</th></tr>
+        <tr>
+          <td>Small (1–5g) — Lab / Research</td>
+          <td>USD 10–21/g<br><small>(Oakwood $12/g×1g; SynQuest $10/g×1g; Sigma 5g pack=$106 → $21/g; TCI 5g=$89 → $17.8/g)</small></td>
+          <td>₹835–₹1,750/g</td>
+          <td>95–98% (GC)</td>
+          <td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook Price Table (Jul 2025)</a></td>
+        </tr>
+        <tr>
+          <td>Reference standard (100mg)</td>
+          <td>USD 60/100mg = $600/g<br><small>(TRC reference standard T310628)</small></td>
+          <td>₹50,000/g</td>
+          <td>Certified Reference Standard</td>
+          <td class="src"><a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">ChemicalBook TRC listing (Dec 2021)</a></td>
+        </tr>
+        <tr>
+          <td>Medium (100g–1kg) — CRO / Pilot Scale</td>
+          <td>USD 200–500/kg estimated (Chinese bulk producers on RFQ basis); ~USD 5–10/g at 100g scale from Chinese distributors</td>
+          <td>₹16,600–₹41,600/kg</td>
+          <td>95–97%</td>
+          <td class="src">Estimated from Chinese supplier price levels; RFQ required from Henan Aochuang and similar.</td>
+        </tr>
+        <tr>
+          <td>Large (>10kg) — Bulk Commercial</td>
+          <td>USD 100–300/kg (estimated; very limited availability from non-China sources)</td>
+          <td>₹8,300–₹24,900/kg</td>
+          <td>Technical / ≥95%</td>
+          <td class="src">Proxy from fluorinated specialty phenol bulk pricing. Specific data not publicly available — direct RFQ essential.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Price Trend &amp; India Cost Factors</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Factor</th><th>Assessment</th></tr>
+        <tr><td>Trend Direction</td><td><span class="tag-amber">Stable to Slowly Increasing</span> — specialty niche; price reflects limited competition and moderate demand growth</td></tr>
+        <tr><td>Key Price Driver</td><td>Growing energy storage R&D demand (Li–S batteries); pharma fluorinated intermediates; limited number of producers globally</td></tr>
+        <tr><td>India Import Cost Additions</td><td>Add ~15–20% to FOB price for freight + insurance + basic customs duty (BCD ~5–7.5% for HS 2907 29 90) + IGST 18% on CIF+BCD. Solid form — NO cold-chain premium unlike 3-VP. Net India landed cost ~35–40% above FOB.</td></tr>
+        <tr><td>Currency Risk</td><td>INR/USD fluctuation; hedge on larger orders. USD-denominated purchase from China.</td></tr>
+        <tr><td>China Price Advantage</td><td>Chinese producers undercut UK/US by 50–70% on bulk. Quality verification critical — CoA, NMR, purity testing mandatory before customer supply.</td></tr>
+        <tr><td>Solid vs. Liquid Handling Advantage</td><td>TFHQ as crystalline solid has major logistical advantage over liquid/moisture-sensitive chemicals: ambient temperature shipping, standard solid cargo containers, no special handling infrastructure needed.</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 06 -->
+<section class="section" id="s06">
+  <div class="sec-header">
+    <div class="sec-num">06</div>
+    <h2>Regulatory, Licensing &amp; <span>Compliance</span></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Global Regulatory Table</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Country / Region</th><th>Regulatory Body</th><th>Classification</th><th>License / Permit Required</th><th>Certification Required</th><th>Source</th></tr>
+        <tr class="india-row"><td>🇮🇳 INDIA</td><td>CPCB, State PCBs; DGFT; MoEFCC; CDSCO (if pharma use)</td><td>Hazardous chemical per GHS/MSIHC Rules — irritant class (H315, H319); not scheduled/controlled drug</td><td>IEC (mandatory for import/export); factory license; hazardous chemicals handling license if above MSIHC threshold quantities; GST registration</td><td>ISO 9001 for commercial supply; GMP/Schedule M compliance if supplying pharma API use; CoA required per batch</td><td class="src">MSIHC Rules 1989; <a href="https://chemindia.chemicals.gov.in">ChemIndia</a></td></tr>
+        <tr><td>🇺🇸 USA</td><td>EPA (TSCA); FDA (if pharma); OSHA</td><td>TSCA Inventory: Listed (DTXSID70227888 confirmed in EPA CompTox). Hazardous material — irritant/mild acute toxicity class. DEA: Not applicable.</td><td>TSCA compliance required for import/manufacture; FDA IND/NDA process if used as drug substance or in drug products</td><td>OSHA HazCom SDS compliance (GHS-aligned); EPA TSCA Section 8 reporting if applicable</td><td class="src"><a href="https://comptox.epa.gov/dashboard/DTXSID70227888">EPA CompTox</a></td></tr>
+        <tr><td>🇪🇺 European Union</td><td>ECHA (REACH); CLP Regulation</td><td>Listed in ECHA C&L Inventory (46 companies, 5 notifications); CLP: H315 Skin Irritant Cat 2, H319 Eye Irritant Cat 2; No SVHC designation found.</td><td>REACH Registration required if manufacturing/importing >1 tonne/year into EU; CLP notification to C&L Inventory</td><td>GHS-CLP-aligned SDS; REACH Annex II SDS; CE for formulated products</td><td class="src"><a href="https://www.smolecule.com/products/s703543">ECHA C&L via Smolecule (2023)</a></td></tr>
+        <tr><td>🇨🇳 China</td><td>MEE; MIIT; NMPA</td><td>Standard industrial chemical; subject to New Chemical Substances Management regulations; major domestic producer — standard domestic compliance</td><td>Chemical substance registration per MEP regulations; standard export documentation; NMPA approval if pharmaceutical use</td><td>China GB standard SDS; standard chemical trade documentation</td><td class="src">China MEE regulations</td></tr>
+        <tr><td>🇯🇵 Japan</td><td>METI; MHLW; JETOC</td><td>Listed on ENCS (Existing Chemical Substances) inventory under Chemical Substances Control Law (CSCL)</td><td>CSCL compliance; notification if new industrial use or above threshold quantities</td><td>PRTR reporting if used above threshold; Japan GHS-aligned SDS</td><td class="src">Japan METI CSCL</td></tr>
+        <tr><td>🇬🇧 UK</td><td>HSE (UK REACH post-Brexit)</td><td>Registered under UK REACH; Robinson Brothers and Fluorochem hold UK regulatory compliance</td><td>UK REACH registration for importers/manufacturers above 1 tonne threshold</td><td>UK REACH SDS; COSHH compliance for workplace handling</td><td class="src">UK HSE / UK REACH</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" style="background:#f57f17">🇮🇳 India — Detailed Regulatory Sub-Section</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Requirement</th><th>Details</th></tr>
+        <tr class="india-row"><td>Import Permission</td><td>IEC (Importer Exporter Code) mandatory — issued by DGFT. TFHQ falls under ITC-HS 2907 29 90; free to import (not restricted/prohibited/SCOMET). Standard customs documentation: commercial invoice, packing list, CoA, SDS/MSDS. BCD ~5–7.5% + IGST 18% on CIF+BCD value.</td></tr>
+        <tr class="india-row"><td>Manufacturing License</td><td>Factory License from State Factories Inspectorate; Consent to Establish + Consent to Operate from State PCB; environment clearance under EIA Notification if above threshold.</td></tr>
+        <tr class="india-row"><td>Storage &amp; Handling</td><td>MSIHC Rules 1989 compliance; GHS-SDS mandatory; H315/H319 irritant class — PPE (gloves, safety goggles, lab coat) required; NO flammable liquid hazard (solid crystalline); standard warehousing adequate; no temperature-controlled storage required.</td></tr>
+        <tr class="india-row"><td>Export Permission</td><td>IEC + Shipping Bill; SCOMET check: Not expected to be restricted (non-strategic fluorochemical). DGFT export policy check recommended before first shipment.</td></tr>
+        <tr class="india-row"><td>Pharma Supply Requirements</td><td>If selling as intermediate for pharmaceutical API synthesis: CDSCO Drug License applicable; GMP compliance under Schedule M; WHO-GMP preferred by MNC pharma buyers.</td></tr>
+        <tr class="india-row"><td>Dye/Colorant Use</td><td>No specific restrictions for use as dye intermediate in India. Standard MSIHC and factory compliance applies.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="alert success">✅ <strong>India Regulatory Summary:</strong> Tetrafluorohydroquinone (TFHQ, CAS 771-63-1) is NOT a scheduled, controlled, or restricted substance in India under any drug law, NDPS Act, SCOMET list, or MSIHC Scheduled chemical list. It can be legally imported, stored, and traded across India with standard commercial registrations (IEC, GST, Factory License). For pharma intermediate supply, CDSCO Drug License and GMP compliance are additionally recommended. Regulatory risk for this product in India is LOW.</div>
+</section>
+
+<!-- SECTION 07 -->
+<section class="section" id="s07">
+  <div class="sec-header">
+    <div class="sec-num">07</div>
+    <h2>Potential Customers &amp; <span>Target Companies</span></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-header">7A — Indian Target Companies</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Company</th><th>Segment</th><th>Location</th><th>Why a Target (Rationale)</th><th>Website</th></tr>
+        <tr class="india-row"><td>Navin Fluorine International Ltd.</td><td>Specialty Fluorochemicals / API Intermediates</td><td>Mumbai / Surat, Gujarat</td><td>India's leading specialty fluorochemicals manufacturer; active in CDMO for fluorinated pharmaceuticals; TFHQ as building block for fluorinated API synthesis programs; cGMP-capable plants; clear strategic fit</td><td class="src">navinfluorine.com</td></tr>
+        <tr class="india-row"><td>SRF Ltd. (Chemicals Division)</td><td>Specialty Fluorochemicals</td><td>Bhiwadi, Rajasthan / Chennai</td><td>Major fluorochemicals manufacturer (HF-based); expanding specialty fluorine portfolio; potential buyer of TFHQ as advanced fluorinated aromatic intermediate for polymer and pharma programs</td><td class="src">srf.com</td></tr>
+        <tr class="india-row"><td>Gujarat Fluorochemicals (INOX GFL)</td><td>Fluoropolymers &amp; Specialty Chemicals</td><td>Bharuch, Gujarat</td><td>India's largest fluoropolymer producer; R&D into specialty fluorinated monomers; TFHQ as monomer building block for advanced fluorinated polymer programs; exhibited at CPHI for pharma fluoro-intermediates</td><td class="src">gfl.co.in</td></tr>
+        <tr class="india-row"><td>Divi's Laboratories Ltd.</td><td>API / Pharma CDMO</td><td>Hyderabad (Pharmacity)</td><td>Major CDMO for fluorinated APIs; growing portfolio of fluorinated drug intermediates for regulated markets; potential buyer of TFHQ as building block for novel fluorinated API synthesis</td><td class="src">divislabs.com</td></tr>
+        <tr class="india-row"><td>Laurus Labs Ltd.</td><td>API / CRO / CDMO</td><td>Hyderabad</td><td>Complex API synthesis and CDMO services; pharmaceutical customers increasingly need fluorinated intermediates; TFHQ in antiviral/oncology synthesis programs</td><td class="src">lauruslabs.com</td></tr>
+        <tr class="india-row"><td>Syngene International Ltd.</td><td>CRO / CDMO</td><td>Bengaluru</td><td>Contract research for global pharma clients; uses specialty intermediates for custom synthesis programs; TFHQ for fluorinated molecule development programs</td><td class="src">syngeneintl.com</td></tr>
+        <tr class="india-row"><td>Aarti Industries Ltd.</td><td>Specialty Chemicals / Pharma Intermediates</td><td>Vapi, Gujarat</td><td>Large-scale specialty chemical manufacturer with pharma intermediate division; growing fluorochemical capabilities; potential buyer or toll-manufacturer for TFHQ derivative programs</td><td class="src">aarti-industries.com</td></tr>
+        <tr class="india-row"><td>Jay Chemical Industries</td><td>Dyes &amp; Specialty Chemicals</td><td>Ahmedabad, Gujarat</td><td>India's leading dye manufacturer; fluorinated aromatic building blocks for reactive/disperse dye synthesis; TFHQ as fluorinated dye intermediate for high-fastness color programs</td><td class="src">jaychem.com</td></tr>
+        <tr class="india-row"><td>IIT Bombay / IIT Madras / IISc Bengaluru</td><td>Academic Research / Energy Storage</td><td>Pan-India</td><td>Active research in organic battery electrolytes, Li–S batteries, OLEDs; potential research-grade TFHQ buyers for energy storage and organic electronics programs</td><td class="src">iitb.ac.in / iitm.ac.in / iisc.ac.in</td></tr>
+        <tr class="india-row"><td>CSIR-NCL (National Chemical Laboratory)</td><td>Government R&D</td><td>Pune, Maharashtra</td><td>National lab with active fluorine chemistry and polymer research programs; research-grade TFHQ buyer for advanced materials and synthesis studies</td><td class="src">ncl.res.in</td></tr>
+        <tr class="india-row"><td>Neuland Laboratories Ltd.</td><td>API / Specialty Pharma</td><td>Hyderabad</td><td>Complex API synthesis for regulated global markets; growing fluorinated API portfolio; potential buyer for specialty fluorinated intermediates</td><td class="src">neulandlabs.com</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">7B — Global Target Companies</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Company</th><th>Country</th><th>Segment</th><th>Why a Target</th></tr>
+        <tr><td>AGC Chemicals (AGC Inc.)</td><td>Japan / Belgium</td><td>Specialty Fluorochemicals / Pharma Intermediates</td><td>Global leader in fluorinated specialty chemicals; provides fluorine-containing building blocks for pharma/agro; potential buyer of TFHQ as advanced building block</td></tr>
+        <tr><td>Solvay SA</td><td>Belgium</td><td>Specialty Fluoropolymers &amp; Chemicals</td><td>$150M fluorochemical plant expansion (2025); major buyer of fluorinated monomers and building blocks for advanced materials programs</td></tr>
+        <tr><td>Merck KGaA (MilliporeSigma)</td><td>Germany</td><td>Lab Chemicals / Pharma Research</td><td>Already catalogs TFHQ (Sigma-Aldrich); large-volume procurement from specialty chemical suppliers; potential bulk supply relationship</td></tr>
+        <tr><td>Arkema SA</td><td>France</td><td>Specialty Fluoropolymers</td><td>Acquired niche fluorinated specialty chemicals firm (2025); expanding high-performance fluoropolymer portfolio; potential downstream polymer monomer buyer</td></tr>
+        <tr><td>CATL (Contemporary Amperex Technology Co.)</td><td>China</td><td>Battery Manufacturing</td><td>World's largest battery maker; active R&D in organic cathode materials; PTFHQ/PTFHQS copolymer research directly relevant</td></tr>
+        <tr><td>Fluorochem Ltd.</td><td>UK</td><td>Specialty Fluorochemicals</td><td>Leading UK fluorochemicals distributor; potential resale partnership or alternative sourcing for Indian market</td></tr>
+        <tr><td>Huntsman Corporation</td><td>USA</td><td>Specialty Chemicals / Dyes</td><td>Fluorinated aromatic intermediates for specialty dye and performance product programs</td></tr>
+        <tr><td>Samsung SDI</td><td>South Korea</td><td>Battery Materials</td><td>Li–S battery and advanced cathode research; TFHQ-based organosulfur cathodes being researched in academic partnerships</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 08 -->
+<section class="section" id="s08">
+  <div class="sec-header">
+    <div class="sec-num">08</div>
+    <h2>Strategic Business <span>Frameworks</span></h2>
+  </div>
+
+  <!-- SWOT -->
+  <div class="card">
+    <div class="card-header">8A — SWOT Analysis</div>
+    <div class="card-body">
+      <div class="swot">
+        <div class="swot-q s">
+          <h4>💪 STRENGTHS</h4>
+          <ul>
+            <li>Solid crystalline form — no cold-chain, simpler logistics vs. liquid specialty chemicals</li>
+            <li>Lower regulatory complexity than controlled/scheduled substances</li>
+            <li>Multiple high-growth downstream applications (batteries, pharma, organic electronics)</li>
+            <li>India has strong existing pharma/fluorochemical customer base for this product</li>
+            <li>Company capabilities span import-export, CRO, domestic trading — multiple entry modes</li>
+            <li>No Indian competitor currently active — clear first-mover window</li>
+            <li>India has established fluorochemical manufacturers (potential manufacturing partners)</li>
+          </ul>
+        </div>
+        <div class="swot-q w">
+          <h4>⚠ WEAKNESSES</h4>
+          <ul>
+            <li>Very small niche market — near-term revenue ceiling is limited</li>
+            <li>~100% China-dependent supply — geopolitical and quality concentration risk</li>
+            <li>Market data extremely limited — demand hard to size with precision</li>
+            <li>Manufacturing route requires fluorinated aromatic starting material (not India-available)</li>
+            <li>Research-grade primary demand = small order sizes, complex customer qualification</li>
+            <li>Battery application is still R&D stage — not yet commercial scale</li>
+          </ul>
+        </div>
+        <div class="swot-q o">
+          <h4>🚀 OPPORTUNITIES</h4>
+          <ul>
+            <li>Li–S battery commercialization could scale TFHQ demand 5–10x by 2028–2030</li>
+            <li>Growing fluorinated pharma API sector (India CDMO) needs fluorinated building blocks</li>
+            <li>India's National Green Hydrogen + battery storage mandate drives energy storage R&D</li>
+            <li>No Indian distributor specifically positioning for TFHQ — differentiation possible</li>
+            <li>UK/Japan/EU pharma customers seeking non-China supply chain diversification</li>
+            <li>Fluorinated dye industry (Gujarat) could use TFHQ for high-performance colorants</li>
+            <li>JV with Navin Fluorine or GFL for domestic Indian production — long-term play</li>
+          </ul>
+        </div>
+        <div class="swot-q t">
+          <h4>⚡ THREATS</h4>
+          <ul>
+            <li>China supply concentration — export restrictions or price dumps both are risks</li>
+            <li>Battery application may not commercialize at predicted pace</li>
+            <li>Market is very small — may not justify dedicated team initially</li>
+            <li>Quality variation from Chinese suppliers requires strong QC/testing infrastructure</li>
+            <li>Large global chemical distributors (Sigma-Aldrich, TCI) already serve the market</li>
+            <li>Technology substitution — alternative quinone derivatives could replace TFHQ in battery research</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTER'S -->
+  <div class="card">
+    <div class="card-header">8B — Porter's Five Forces</div>
+    <div class="card-body">
+      <div class="porter-grid">
+        <div class="porter-card medium">
+          <h4>Competitive Rivalry</h4>
+          <div class="intensity">● MEDIUM-LOW</div>
+          <p>~125 global suppliers but dominated by Chinese manufacturers. In India specifically, only TCI (Japan-sourced) and small importers — virtually no focused Indian competitor. Niche market keeps rivalry manageable.</p>
+        </div>
+        <div class="porter-card medium">
+          <h4>Threat of New Entrants</h4>
+          <div class="intensity">● MEDIUM</div>
+          <p>Moderate chemical synthesis complexity; fluorination expertise required for manufacturing. Import/distribution entry is low-barrier. Chinese manufacturers could expand. India-based manufacturing entry is feasible but requires investment in F-chemistry capability.</p>
+        </div>
+        <div class="porter-card high">
+          <h4>Bargaining Power of Suppliers</h4>
+          <div class="intensity">● HIGH</div>
+          <p>Supply highly concentrated in China (~65–70%). Few alternative sources at bulk scale. UK/Japan alternatives at premium pricing. China export policy is an active risk. Supplier concentration is the key strategic vulnerability.</p>
+        </div>
+        <div class="porter-card low">
+          <h4>Bargaining Power of Buyers</h4>
+          <div class="intensity">● LOW-MEDIUM</div>
+          <p>Research buyers are price-sensitive but low-volume. Pharma CDMO buyers require specific purity specs — limited substitution possible. Battery researchers may substitute other quinones but TFHQ has distinct electrochemical properties. Overall buyer power moderate.</p>
+        </div>
+        <div class="porter-card low">
+          <h4>Threat of Substitutes</h4>
+          <div class="intensity">● LOW-MEDIUM</div>
+          <p>For pharma intermediates: TFHQ's specific four-fluorine substitution pattern provides unique SNAr chemistry — limited substitutes. For battery catholyte: other quinones (TFBQ, anthraquinone) are partial substitutes but TFHQ's HRFB performance data is superior per published studies. For photographic: declining market anyway.</p>
+        </div>
+        <div class="porter-card medium">
+          <h4>Overall Attractiveness</h4>
+          <div class="intensity">● MODERATE-FAVORABLE</div>
+          <p>Niche specialty chemical with multiple high-growth downstream sectors as tailwinds. Favorable for India-focused distributor with pharma/fluorochemical relationships. Key risk: China supply concentration. Opportunity: battery materials boom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PESTLE -->
+  <div class="card">
+    <div class="card-header">8C — PESTLE Analysis</div>
+    <div class="card-body">
+      <div class="pestle-grid">
+        <div class="pestle-card">
+          <h4>🏛 Political</h4>
+          <ul>
+            <li>India's National Green Hydrogen Mission and battery storage mandates drive energy storage R&D demand</li>
+            <li>China supply concentration — geopolitical risk of export restrictions on specialty chemicals</li>
+            <li>"Make in India" / PLI for Specialty Chemicals incentivizes domestic fluorochemical production</li>
+            <li>US/EU semiconductor and battery supply chain localization policies create demand for fluorinated materials</li>
+          </ul>
+        </div>
+        <div class="pestle-card">
+          <h4>📊 Economic</h4>
+          <ul>
+            <li>Global specialty fluorochemicals growing at 4.8–5.8% CAGR — TFHQ benefits as niche sub-segment</li>
+            <li>India pharma CDMO market growing ~12% annually — increasing demand for specialty intermediates</li>
+            <li>Li–S battery market projected 30%+ CAGR — transformative upside for TFHQ demand if commercialized</li>
+            <li>INR/USD volatility adds import cost unpredictability — hedge on larger orders</li>
+          </ul>
+        </div>
+        <div class="pestle-card">
+          <h4>👥 Social</h4>
+          <ul>
+            <li>Growing sustainability focus drives interest in organic battery electrolytes (non-vanadium, non-toxic)</li>
+            <li>ESG mandates push pharma and chemical companies toward lower-fluorine, greener chemistry — TFHQ is a research tool in this space</li>
+            <li>India's STEM talent pool supports growing CRO/CDMO sector as customer base</li>
+          </ul>
+        </div>
+        <div class="pestle-card">
+          <h4>🔬 Technological</h4>
+          <ul>
+            <li>Li–S battery technology advancing toward commercialization — PTFHQS cathode is a validated material</li>
+            <li>Organic electronics (OLED, OPV) expanding — fluorinated aromatics as key materials</li>
+            <li>Fluorine-in-pharma trend: ~20% of all APIs now contain fluorine; growing demand for building blocks</li>
+            <li>Redox flow battery organic electrolyte development — quinone derivatives including TFHQ under active study</li>
+          </ul>
+        </div>
+        <div class="pestle-card">
+          <h4>⚖️ Legal &amp; Regulatory</h4>
+          <ul>
+            <li>India: Not scheduled/controlled — low regulatory barrier for import and trade</li>
+            <li>EU REACH: Listed in C&L Inventory; no SVHC status — manageable compliance</li>
+            <li>USA TSCA: Listed on inventory (DTXSID70227888) — standard compliance</li>
+            <li>GMP compliance needed for pharma customer supply (CDSCO Schedule M)</li>
+            <li>China's evolving chemical export/environment regulations — active monitoring needed</li>
+          </ul>
+        </div>
+        <div class="pestle-card">
+          <h4>🌿 Environmental</h4>
+          <ul>
+            <li>TFHQ is not PFAS (per- and polyfluoroalkyl substance) — favorable regulatory position vs. legacy fluorochemicals</li>
+            <li>Biodegradation profile not widely studied — exercise precaution in waste disposal</li>
+            <li>PCB compliance needed for any manufacturing operations in India</li>
+            <li>Battery application of TFHQ represents a green chemistry opportunity (organic vs. vanadium electrolytes)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BCG -->
+  <div class="card">
+    <div class="card-header">8D — BCG Matrix Classification</div>
+    <div class="card-body">
+      <div class="bcg-grid">
+        <div class="bcg-q star"><h4>⭐ STAR</h4><p>Established fluoropolymers (PTFE, PVDF) — high growth in electronics/EV/aerospace with strong market share</p></div>
+        <div class="bcg-q qmark"><h4>❓ QUESTION MARK — OUR POSITION</h4><p><strong>TFHQ — HIGH GROWTH END MARKETS (battery, pharma, organic electronics) + LOW CURRENT MARKET SHARE.</strong> Investment in customer development required. Viable "Star" trajectory if battery commercialization occurs or pharma anchor customer secured. Strategy: selective investment, not commodity play.</p></div>
+        <div class="bcg-q cow"><h4>🐄 CASH COW</h4><p>Commodity fluorochemicals (HF, AlF₃) — stable, mature, dominated by large Indian manufacturers (GFL, SRF)</p></div>
+        <div class="bcg-q dog"><h4>🐕 DOG</h4><p>Silver halide photography chemicals — declining market; avoid this application segment for TFHQ</p></div>
+      </div>
+      <div class="alert info" style="margin-top:12px">TFHQ is clearly a <strong>Question Mark</strong>: operating in multiple high-growth end markets (battery, pharma, organic electronics) with a currently small commercial presence. Strategic recommendation: invest selectively to establish market position, particularly in pharma CRO/CDMO and battery research channels. Battery commercialization is the key "Star" catalyst.</div>
+    </div>
+  </div>
+
+  <!-- ANSOFF -->
+  <div class="card">
+    <div class="card-header">8E — Ansoff Matrix — Recommended Strategy</div>
+    <div class="card-body">
+      <div class="ansoff-grid">
+        <div class="ansoff-q na"><h4>Market Penetration</h4><p>Sell existing product to existing market — not applicable (no current TFHQ presence in India)</p><p><em>Not Applicable</em></p></div>
+        <div class="ansoff-q rec"><h4>✅ Market Development — RECOMMENDED (Immediate)</h4><p>Leverage existing pharma/fluorochemical customer relationships to introduce TFHQ as a new specialty intermediate. Lowest risk entry strategy. Target Navin Fluorine, Divi's, Laurus Labs, Syngene. Position as reliable non-China-direct source.</p></div>
+        <div class="ansoff-q med"><h4>⚡ Product Development — MEDIUM-TERM</h4><p>Source multiple TFHQ grades (research + technical + custom purity); potentially develop India-made TFHQ via partnership with GFL/Navin Fluorine using fluorination expertise. Differentiated, quality-assured product.</p></div>
+        <div class="ansoff-q caut"><h4>⚠ Diversification — AVOID INITIALLY</h4><p>New product + new market — high risk. Consider TFHQ-derived products (TFBQ = oxidized form, PTFHQ polymer) only after TFHQ supply credibility established. Long-term / cautious.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUE CHAIN -->
+  <div class="card">
+    <div class="card-header">8F — Value Chain Analysis</div>
+    <div class="card-body">
+      <div class="vc-flow">
+        <div class="vc-step inactive">Raw Material<br>(HQ / F-phenols)</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step inactive">Synthesis / Mfg<br>(Long-term)</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step active">Sourcing &amp;<br>Import ✓</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step active">Quality Testing<br>&amp; CoA ✓</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step active">Domestic<br>Distribution ✓</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step active">CRO Supply<br>Support ✓</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step active">Export ✓</div>
+        <span class="vc-arrow">→</span>
+        <div class="vc-step inactive">End Customer</div>
+      </div>
+      <p style="font-size:11px;color:#888;margin-bottom:12px">Blue = Recommended participation steps | Gray = Customer or future territory</p>
+      <table>
+        <tr><th>Stage</th><th>Opportunity</th><th>Timeline</th></tr>
+        <tr><td>Sourcing &amp; Import</td><td>Source from Chinese manufacturers (Henan Aochuang, Finetech) + UK/Japan (TCI, Fluorochem) for quality-critical orders; verify CoA, NMR purity; establish multi-source supply</td><td>Immediate</td></tr>
+        <tr><td>Quality Testing</td><td>In-house or third-party NABL-accredited lab testing: GC purity, NMR verification, heavy metals; issue CoA to Indian customers — key differentiator vs. China-direct</td><td>Month 2–4</td></tr>
+        <tr><td>CRO/Research Supply</td><td>Supply research-grade TFHQ (≥97%) to pharma R&D labs, university groups, IIT/CSIR institutes for battery and organic electronics research</td><td>Immediate–Short term</td></tr>
+        <tr><td>Domestic Distribution</td><td>Position as specialty fluorochemical distributor to Navin Fluorine, SRF, Divi's, Jay Chemical for their synthesis programs</td><td>Month 3–6</td></tr>
+        <tr><td>Export</td><td>Re-export quality-tested batches to SE Asia, Middle East; potential Japan/EU pharma for non-China-direct supply; price premium for India-QC-verified product</td><td>Month 6–12</td></tr>
+        <tr><td>Manufacturing (long-term)</td><td>JV or toll-manufacturing partnership with Navin Fluorine or GFL for domestic TFHQ production via diazotization or fluorination route; requires capex and F-chemistry expertise</td><td>3–5 years</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 09 -->
+<section class="section" id="s09">
+  <div class="sec-header">
+    <div class="sec-num">09</div>
+    <h2>Feasibility Summary &amp; <span>Management Recommendation</span></h2>
+  </div>
+
+  <div class="verdict-box">
+    <div class="vtag">Overall Feasibility Assessment</div>
+    <h3>✅ CONDITIONAL — Recommended for Entry</h3>
+    <p>Tetrafluorohydroquinone (TFHQ) is a high-value specialty fluorochemical with solid and growing application pull across pharmaceutical intermediates, energy storage (Li–S and redox flow batteries), specialty polymers, and organic electronics research. The immediate market is niche and small (est. USD 3–10M globally), but positioned in structural growth sectors with a compelling upside scenario if Li–S battery commercialization accelerates. India has zero domestic production and limited organized distribution — creating a clear first-mover opportunity for a quality-focused import and distribution business. Logistics are significantly more favorable than liquid specialty chemicals: TFHQ is a crystalline solid requiring no cold-chain. Regulatory risk is low. The recommended entry strategy is phased: immediate import and domestic trading, followed by CRO/research supply development, and long-term consideration of domestic manufacturing via a JV with an established Indian fluorochemical company. This is a margin-play specialty product, not a volume commodity.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Recommended Business Mode (Priority Order)</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Mode</th><th>Recommendation</th><th>Rationale</th></tr>
+        <tr><td>🔵 Import &amp; Domestic Trading</td><td><span class="tag-green">✅ Start Immediately</span></td><td>Lowest capital requirement; test demand with India pharma, fluorochemical, and research labs; establish supply chain credibility. Source from China (bulk/technical) and TCI Japan (research grade).</td></tr>
+        <tr><td>🔵 Sourcing &amp; Marketing</td><td><span class="tag-green">✅ Start Immediately</span></td><td>Identify 3–5 anchor customers (Navin Fluorine, Divi's, Syngene, IIT labs); supply on RFQ basis; differentiate through quality verification (CoA, NMR confirmation) vs. China-direct ordering</td></tr>
+        <tr><td>🟡 CRO / R&D Support</td><td><span class="tag-blue">✅ Short-term</span></td><td>Supply ≥97% purity TFHQ with CoA to pharma R&D, CRO customers, and university energy storage/organic electronics research groups. High margin, small volume — ideal starting point.</td></tr>
+        <tr><td>🟡 Export</td><td><span class="tag-amber">⚡ Opportunistic</span></td><td>If sourcing quality-verified material at competitive prices, re-export to SE Asia/Middle East or supply Japan/EU pharma companies seeking non-China supply chain alternative. Premium pricing possible for India-QC-verified product.</td></tr>
+        <tr><td>🔴 Manufacturing</td><td><span class="tag-gray">⏳ Long-term (3–5 years)</span></td><td>Only viable after customer base established and market validated. Explore JV with Navin Fluorine or GFL; requires F-chemistry expertise and capex. Commission feasibility study in Year 2.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Key Risks to Monitor</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Risk</th><th>Level</th><th>Mitigation</th></tr>
+        <tr><td>China supply concentration (~65–70% of global supply)</td><td><span class="tag-red">HIGH</span></td><td>Qualify 2–3 suppliers from different countries (China + UK Robinson Brothers/Fluorochem + Japan TCI); maintain safety stock; monitor China export policy monthly</td></tr>
+        <tr><td>Small market size — near-term revenue ceiling</td><td><span class="tag-amber">MEDIUM</span></td><td>Position as one of several specialty fluorochemical lines; don't rely on TFHQ alone for business unit revenue; build portfolio of fluorinated specialty chemicals</td></tr>
+        <tr><td>Battery application may not commercialize at pace</td><td><span class="tag-amber">MEDIUM</span></td><td>Do not over-invest in battery sector positioning; pharma and research supply provide stable near-term demand regardless of battery commercialization timeline</td></tr>
+        <tr><td>Quality variation from Chinese bulk suppliers</td><td><span class="tag-amber">MEDIUM</span></td><td>Mandatory independent QC testing (GC purity ≥97%, NMR) before any customer supply; issue own CoA; build reputation on quality</td></tr>
+        <tr><td>Customer qualification timeline (pharma GMP)</td><td><span class="tag-amber">MEDIUM</span></td><td>Start with research/CRO customers (faster qualification); pharma manufacturer supplier qualification is 6–18 months — begin outreach immediately</td></tr>
+        <tr><td>Technology substitution (other quinone derivatives)</td><td><span class="tag-green">LOW</span></td><td>Monitor academic literature on quinone battery electrolytes; if TFBQ or other derivatives become preferred, ensure supply for those as well; TFHQ has distinct properties per published data</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Suggested Next Steps</div>
+    <div class="card-body">
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Customer Validation (Month 1–2)</h4>
+            <p>Approach 5 Indian target companies: Navin Fluorine International, Divi's Laboratories, Syngene International, IIT Bombay (energy storage group), Jay Chemical Industries. Assess interest, quantity requirements, purity specifications, and qualification requirements. Also contact 2 battery research institutes.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Supplier Qualification (Month 1–3)</h4>
+            <p>Identify and qualify 2–3 suppliers: (a) Chinese bulk source (Henan Aochuang or similar — RFQ for 100g, 500g, 1kg quantities); (b) TCI Japan (research grade T2003 — already listed in India); (c) Fluorochem UK (premium pharma grade). Request CoA, MSDS, and pricing for each quantity scale.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Quality Infrastructure Setup (Month 2–4)</h4>
+            <p>Arrange third-party QC testing capability (GC purity, ¹H NMR, ¹⁹F NMR, heavy metals panel) with NABL-accredited lab. Develop internal CoA template. Establish standard solid chemical warehousing (ambient temperature, sealed container, moisture-controlled storage) — NO cold-chain needed.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Trial Import (Month 3–6)</h4>
+            <p>Place trial import of 100g–500g from primary Chinese supplier + 25g from TCI Japan for quality comparison. Customs clearance under ITC-HS 2907 29 90. QC test both. Supply to 1–2 anchor customers for evaluation. Gather feedback on quality specifications required.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Market Development &amp; CRO Positioning (Month 6–12)</h4>
+            <p>List TFHQ in company product catalog; approach IIT energy storage groups and CSIR-NCL for research supply; participate in CPhI India; join India Chem exhibition to connect with fluorochemical and pharma intermediate buyers. Build brand as quality TFHQ specialist.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <h4>Manufacturing Feasibility Study (Month 12–18)</h4>
+            <p>Commission technical feasibility study on domestic TFHQ manufacturing via diazotization or fluorination route. Assess JV potential with Navin Fluorine International or Gujarat Fluorochemicals. Engage IIT/CSIR technical consultancy. Decision point: invest in manufacturing or remain import-distributor based on market traction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10 -->
+<section class="section" id="s10">
+  <div class="sec-header">
+    <div class="sec-num">10</div>
+    <h2>Sources &amp; <span>References</span></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <ol class="ref-list">
+        <li>ChemicalBook — Tetrafluorohydroquinone (CAS 771-63-1) | Accessed June 2026 | <a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm">https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0276036.htm</a></li>
+        <li>Sigma-Aldrich (Merck KGaA) — Tetrafluorohydroquinone 95% Product #104361 | Pricing updated Jul 2025 | <a href="https://www.sigmaaldrich.com/US/en/product/aldrich/104361">https://www.sigmaaldrich.com/US/en/product/aldrich/104361</a></li>
+        <li>TCI Chemicals — Product T2003 Tetrafluorohydroquinone >97% (GC) | <a href="https://www.tcichemicals.com">https://www.tcichemicals.com</a></li>
+        <li>Smolecule — Tetrafluorohydroquinone (TFHQ) Technical Profile | August 2023 | <a href="https://www.smolecule.com/products/s703543">https://www.smolecule.com/products/s703543</a></li>
+        <li>BenchChem — Buy Tetrafluorohydroquinone | 771-63-1 (Applications overview) | <a href="https://www.benchchem.com/product/b1294475">https://www.benchchem.com/product/b1294475</a></li>
+        <li>MuseChem — Tetrafluorohydroquinone CAS 771-63-1 | September 2022 | <a href="https://www.musechem.com/product/tetrafluorohydroquinone-771-63-1/">https://www.musechem.com/product/tetrafluorohydroquinone-771-63-1/</a></li>
+        <li>Alfa Chemistry — Tetrafluorohydroquinone CAS 771-63-1 | <a href="https://www.alfa-chemistry.com/product/tetrafluorohydroquinone-cas-771-63-1-446081.html">https://www.alfa-chemistry.com/product/tetrafluorohydroquinone-cas-771-63-1-446081.html</a></li>
+        <li>BOC Sciences — Tetrafluorohydroquinone CAS 771-63-1 (Biomedical profile) | <a href="https://polymer.bocsci.com/product/tetrafluorohydroquinone-cas-771-63-1-379624.html">https://polymer.bocsci.com/product/tetrafluorohydroquinone-cas-771-63-1-379624.html</a></li>
+        <li>CymitQuimica — CAS 771-63-1 Tetrafluorohydroquinone | <a href="https://cymitquimica.com/cas/771-63-1/">https://cymitquimica.com/cas/771-63-1/</a></li>
+        <li>Niknam K. et al. — "Application of tetrafluoro-p-hydroquinone and 3-fluorocatechol as the catholyte…in hybrid redox flow batteries" | Journal of Electroanalytical Chemistry | ScienceDirect 2016 | <a href="https://www.sciencedirect.com/science/article/abs/pii/S1572665716303617">https://www.sciencedirect.com/science/article/abs/pii/S1572665716303617</a></li>
+        <li>Guo Y. et al. — "Fluorinated quinone derived organosulfur copolymer cathodes for long-cycling, thermostable and flexible lithium–sulfur batteries" | Chemical Engineering Journal | ScienceDirect 2021 | <a href="https://www.sciencedirect.com/science/article/abs/pii/S1385894721019021">https://www.sciencedirect.com/science/article/abs/pii/S1385894721019021</a></li>
+        <li>Sharer L.J. et al. — "Cytochrome P450-mediated oxidation of pentafluorophenol to tetrafluorobenzoquinone as the primary reaction product" | Sigma-Aldrich Paper | OSTI DOE | <a href="https://www.sigmaaldrich.com/catalog/papers/8292746">https://www.sigmaaldrich.com/catalog/papers/8292746</a></li>
+        <li>OSTI.GOV — Cytochrome P450-mediated oxidation (TFHQ metabolite study) | <a href="https://www.osti.gov/biblio/6755258-cytochrome-p450-mediated-oxidation-pentafluorophenol-tetrafluorobenzoquinone-primary-reaction-product">https://www.osti.gov/biblio/6755258</a></li>
+        <li>EPA CompTox Dashboard — Tetrafluorohydroquinone DTXSID70227888 | <a href="https://comptox.epa.gov/dashboard/DTXSID70227888">https://comptox.epa.gov/dashboard/DTXSID70227888</a></li>
+        <li>Straits Research — "Global Fluorochemicals Market" | March 2025 | <a href="https://straitsresearch.com/report/fluorochemicals-market">https://straitsresearch.com/report/fluorochemicals-market</a></li>
+        <li>Straits Research — "Fluorochemicals Market Size, Share & Growth 2026–2034" | Mar 2025 | <a href="https://straitsresearch.com/press-release/global-fluorochemicals-market-growth">https://straitsresearch.com/press-release/global-fluorochemicals-market-growth</a></li>
+        <li>ReAnIn — "Organic Fluorochemicals Market" (USD 15.2B 2024 → 18.7B 2031) | Updated Nov 2025 | <a href="https://www.reanin.com/reports/organic-fluorochemicals-market">https://www.reanin.com/reports/organic-fluorochemicals-market</a></li>
+        <li>Verified Market Reports — "Fluorinated Fine Chemicals Market Size, Growth Analysis & Forecast 2026–2034" | 2026 | <a href="https://www.verifiedmarketreports.com/product/fluorinated-fine-chemicals-market/">https://www.verifiedmarketreports.com/product/fluorinated-fine-chemicals-market/</a></li>
+        <li>Mordor Intelligence — "Fluorochemicals Market Report" (specialty segment; pharma fastest-growing) | 2025 | <a href="https://www.mordorintelligence.com/industry-reports/fluorochemical-market">https://www.mordorintelligence.com/industry-reports/fluorochemical-market</a></li>
+        <li>Grand View Research — "Fluorochemicals Market" (USD 26.5B 2023 → USD 36B 2030) | <a href="https://www.grandviewresearch.com/industry-analysis/fluorochemical-market">https://www.grandviewresearch.com/industry-analysis/fluorochemical-market</a></li>
+        <li>SkyQuestt — "Global Fluorochemicals Market" (USD 27.88B 2024 → USD 44B 2033) | May 2025 | <a href="https://www.skyquestt.com/report/fluorochemicals-market">https://www.skyquestt.com/report/fluorochemicals-market</a></li>
+        <li>Gujarat Fluorochemicals / INOX GFL — Fluorospeciality Chemicals (India major producer) | <a href="https://gfl.co.in/">https://gfl.co.in/</a></li>
+        <li>AGC Chemicals — Fluorine Specialty Ingredients for Pharmaceutical Manufacturing | <a href="https://www.agcchem.com/products/intermediates/">https://www.agcchem.com/products/intermediates/</a></li>
+        <li>India High Performance Fluoropolymer Market (USD 252M 2025 → USD 345M 2032) | Intel Market Research 2025 | <a href="https://www.intelmarketresearch.com/global-india-high-performance-fluoropolymer-forecast-market-10371">https://www.intelmarketresearch.com/global-india-high-performance-fluoropolymer-forecast-market-10371</a></li>
+        <li>ScienceDirect Topics — Fluoroaniline / Cytochrome P450 defluorination overview (includes TFHQ metabolite data) | <a href="https://www.sciencedirect.com/topics/chemistry/fluoroaniline">https://www.sciencedirect.com/topics/chemistry/fluoroaniline</a></li>
+        <li>Pharmaffiliates Analytics — Research chemical supply India | <a href="https://www.pharmaffiliates.com">https://www.pharmaffiliates.com</a></li>
+        <li>Fortune Business Insights — "Fluorochemicals Market Size, Share | Industry Report 2030" | <a href="https://www.fortunebusinessinsights.com/fluorochemicals-market-102343">https://www.fortunebusinessinsights.com/fluorochemicals-market-102343</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>CONFIDENTIAL — INTERNAL USE ONLY</strong><br>
+  Prepared by Market Intelligence &amp; Data Analytics | June 2026<br>
+  Based on publicly available secondary sources. TFHQ (CAS 771-63-1) market data is limited in public domain; estimates clearly flagged throughout.<br>
+  To export as PDF: Click "⬇ Download PDF" in the sidebar, or File → Print → Save as PDF in Chrome.
+</footer>
+
+</div><!-- /main -->
+
+<script>
+  // Smooth scroll for sidebar nav
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '-60px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
